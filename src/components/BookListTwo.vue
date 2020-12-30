@@ -11,18 +11,21 @@
 </template>
 
 <script>
-
+import {mapGetters} from 'vuex'
 export default {
   computed: {
     book() {
       return this.$store.state.books;
     },
-    saleBooks() {
-      return this.$store.getters.saleBooks;
-    },
-    saleBooks1(){
-      return this.$store.getters.saleBooks1;
-    }
+    ...mapGetters([
+        "saleBooks", "saleBooks1"
+    ])
+    // saleBooks() {
+    //   return this.$store.getters.saleBooks;
+    // },
+    // saleBooks1(){
+    //   return this.$store.getters.saleBooks1;
+    // }
   }
 }
 </script>
